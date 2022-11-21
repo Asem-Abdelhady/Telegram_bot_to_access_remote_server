@@ -1,0 +1,14 @@
+1- Make the docker compose to run, griffana, promthesus, telegram bot server
+2- Add all the basic function
+3- Optimize(Fix bugs) and extra features -> 3.sublsit
+
+
+
+
+3.sublist:
+1- make sure the file path exists in cd exists
+2- add auto_completion
+3- make sure the file exists for get and processed correctly (does not exceed buffer)
+4- make the ls works elegantly
+5- add restrictions for the commands
+6- make the telegram bot starts by listing machines with the bot server running on
