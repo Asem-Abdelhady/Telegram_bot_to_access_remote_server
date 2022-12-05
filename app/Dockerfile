@@ -5,11 +5,10 @@ WORKDIR /app
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt \
-    && addgroup -S app && adduser -S app -G app \
-    && chown -R app:app .
+    && chown -R 1000:0 .
 
 COPY . .
 
-USER app
+USER 1000
 
 CMD ["python", "main.py"]

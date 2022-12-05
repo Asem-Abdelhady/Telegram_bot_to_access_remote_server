@@ -1,0 +1,45 @@
+---
+- name: Deploy roles
+  hosts: lo
+  become: true
+
+  # vars_prompt:
+  #   - name: TG_ID
+  #     prompt: Telegram Chat ID
+  #     private: false
+
+  #   - name: API_ID
+  #     prompt: Telegram API ID (Hidden)
+
+  #   - name: API_HASH
+  #     prompt: Telegram API HASH (Hidden)
+
+  #   - name: BOT_TOKEN
+  #     prompt: Telegram Bot Token (Hidden)
+
+  tasks:
+    - name: Copy monitoring
+      ansible.builtin.copy:
+        src: ../monitoring
+        dest: /tmp
+        mode: "0666"
+
+    - name: Copy app
+      ansible.builtin.copy:
+        src: ../app
+        dest: /tmp
+        mode: "0666"
+
+    # - name: Overwrite app docker-compose
+    #   ansible.builtin.template:
+    #     src: docker-compose.yaml.j2
+    #     dest: /tmp/app/docker-compose.yaml
+    #     mode: "0666"
+
+    - name: Run monitoring docker-compose
+      community.docker.docker_compose:
+        project_src: /tmp/monitoring
+
+    - name: Run app docker-compose
+      community.docker.docker_compose:
+        project_src: /tmp/app
