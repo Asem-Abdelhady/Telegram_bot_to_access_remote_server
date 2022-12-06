@@ -7,3 +7,5 @@ services:
     container_name: tel_app
     volumes:
       - "$HOME:/app/storage"
+    env_file:
+      - .env

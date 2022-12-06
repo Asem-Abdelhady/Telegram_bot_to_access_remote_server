@@ -3,20 +3,6 @@
   hosts: lo
   become: true
 
-  # vars_prompt:
-  #   - name: TG_ID
-  #     prompt: Telegram Chat ID
-  #     private: false
-
-  #   - name: API_ID
-  #     prompt: Telegram API ID (Hidden)
-
-  #   - name: API_HASH
-  #     prompt: Telegram API HASH (Hidden)
-
-  #   - name: BOT_TOKEN
-  #     prompt: Telegram Bot Token (Hidden)
-
   tasks:
     - name: Copy monitoring
       ansible.builtin.copy:
@@ -30,16 +16,12 @@
         dest: /tmp
         mode: "0666"
 
-    # - name: Overwrite app docker-compose
-    #   ansible.builtin.template:
-    #     src: docker-compose.yaml.j2
-    #     dest: /tmp/app/docker-compose.yaml
-    #     mode: "0666"
-
     - name: Run monitoring docker-compose
       community.docker.docker_compose:
-        project_src: /tmp/monitoring
+        project_src: /tmp/monitoring/
+        build: true
 
     - name: Run app docker-compose
       community.docker.docker_compose:
-        project_src: /tmp/app
+        project_src: /tmp/app/
+        build: true
