@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 import os
 import subprocess
 
+# try github action
+
 load_dotenv('.env')
 
 app = Client("my_account", api_id=os.environ['API_ID'], api_hash=os.environ['API_HASH'],
