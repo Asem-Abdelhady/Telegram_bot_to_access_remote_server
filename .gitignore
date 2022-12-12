@@ -4,3 +4,4 @@ venv
 *.session
 *.session-journal
 __pychace__
+.github/workflows
