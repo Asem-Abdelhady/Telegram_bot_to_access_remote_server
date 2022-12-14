@@ -87,7 +87,7 @@ Some functionalities in accessing the remote server:
 
 ## Customizations
 
-- You can always add extra features or edit the existing ones from the [main.py] (https://github.com/Asem-Abdelhady/Telegram_bot_to_access_remote_server/blob/master/app/main.py) file.
+- You can always add extra features or edit the existing ones from the [main.py](https://github.com/Asem-Abdelhady/Telegram_bot_to_access_remote_server/blob/master/app/main.py) file.
 
 - If you want instead of making the Ansible playbook running on your local machine only you should add SSH configuration to the machine you want to connect to. Such configuration should be added manually under the [/ansible](https://github.com/Asem-Abdelhady/Telegram_bot_to_access_remote_server/tree/master/ansible) directory.
 
