@@ -5,3 +5,4 @@ venv
 *.session-journal
 __pychace__
 .github
+TODO.txt
