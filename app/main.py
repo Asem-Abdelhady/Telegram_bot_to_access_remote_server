@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 import subprocess
 
-# try github action
+# try github action v1
 
 load_dotenv('.env')
 
