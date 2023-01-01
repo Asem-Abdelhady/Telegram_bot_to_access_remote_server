@@ -93,7 +93,7 @@ Some functionalities in accessing the remote server:
 
 - For Grafana notifications you can use better templates that integrate with telegram messages so it is more readable.
 
-- You can add your github action to deal with the docker image of the telegram server. You can also use the one I made here is the one I use to build and deploy docker image to docker-hub with every commit:
+- You can add your github action to deal with the docker image of the telegram server. You can also use the one I made to build and deploy docker image to docker-hub with every commit:
 
   ```yaml
   name: Docker Image CI
